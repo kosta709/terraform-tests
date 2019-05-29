@@ -18,7 +18,7 @@ resource "aws_launch_configuration" "lc" {
   image_id      = "${data.aws_ami.ubuntu.id}"
   instance_type = "t2.micro"
   key_name = var.key_name
-  
+  user_data = file(format("%s/%s", path.module, "files/web-server-user-data.sh"))
   lifecycle {
     create_before_destroy = true
   }
