@@ -34,6 +34,16 @@ variable "ports_cidrs" {
       "46.117.166.112/32",
       "10.0.0.0/12"
     ]
+  },
+  {
+    description = "rule-3"
+    from_port = "38000"
+    to_port = "39000"
+    protocol = "tcp"
+    cidr_blocks = [
+      "46.117.166.112/32",
+      "10.0.0.0/12"
+    ]
   }
   ]
 }

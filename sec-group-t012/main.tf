@@ -30,7 +30,7 @@ resource "aws_security_group" "t012_common" {
   }
 
   dynamic "ingress" {
-    for_each =  var.ports_cidrs 
+    for_each = var.ports_cidrs 
     content {
       description = ingress.value.description
       from_port = ingress.value.from_port
