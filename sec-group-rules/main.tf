@@ -24,6 +24,7 @@ data "aws_security_group" "sg" {
 
 
 resource "aws_security_group_rule" "allow_ssh_subnets" {
+  count = "${var.ssh_rule_count}"
   security_group_id = "${data.aws_security_group.sg.id}"
   type            = "ingress"
   from_port       = 22

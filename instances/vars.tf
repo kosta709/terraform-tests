@@ -1,5 +1,5 @@
 variable "vpc_name" {
-   default = "k8s.cf-cd.com"
+   default = "default"
 }
 
 variable "sg_name" {

@@ -10,7 +10,7 @@ data "aws_vpcs" "vpc" {
 }
 
 locals {
-  vpc_id = "${element(data.aws_vpcs.vpc.ids, 0)}"
+  vpc_id = "${element(tolist(data.aws_vpcs.vpc.ids), 0)}"
 }
 
 data "aws_subnet_ids" "subnets" {
@@ -18,7 +18,7 @@ data "aws_subnet_ids" "subnets" {
 }
 
 data "aws_subnet" "subnet0" {
-  id = "${element(data.aws_subnet_ids.subnets.ids, 0)}"
+  id = "${element(tolist(data.aws_subnet_ids.subnets.ids), 0)}"
 }
 
 resource "aws_security_group" "tt1_common" {

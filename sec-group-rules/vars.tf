@@ -12,3 +12,7 @@ variable "allow_ssh_cidrs" {
     "172.16.0.0/12"
   ]
 }
+
+variable "ssh_rule_count" {
+   default = "0"
+}
